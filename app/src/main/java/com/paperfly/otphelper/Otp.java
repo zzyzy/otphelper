@@ -1,18 +1,21 @@
 package com.paperfly.otphelper;
 
 import com.google.common.base.Strings;
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
 public class Otp {
-    public String text;
+    String text;
+    String date;
 
     public Otp() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Otp(String text) {
+    public Otp(String text, String date) {
         this.text = text;
+        this.date = date;
     }
 
     public String getText() {
@@ -23,7 +26,16 @@ public class Otp {
         this.text = text;
     }
 
-    public Boolean isValid() {
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    @Exclude
+    public boolean isValid() {
         return !Strings.isNullOrEmpty(text);
     }
 }

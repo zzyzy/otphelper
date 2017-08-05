@@ -11,6 +11,6 @@ public class OtpRepository {
     }
 
     public void setOtp(Otp otp) {
-        mDatabase.setValue(otp.getText());
+        mDatabase.setValue(otp);
     }
 }
