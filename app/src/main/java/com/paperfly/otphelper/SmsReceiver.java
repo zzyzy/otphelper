@@ -73,7 +73,8 @@ public class SmsReceiver extends BroadcastReceiver {
 
             OtpParcelable otpParcelable = new OtpParcelable(otp);
             Intent otpIntent = new Intent(context, OtpIntentService.class);
-            otpIntent.putExtra(OtpIntentService.EXTRA_PARAM1, otpParcelable);
+            otpIntent.putExtra(OtpIntentService.EXTRA_PARAM_OTP, otpParcelable);
+            otpIntent.putExtra(OtpIntentService.EXTRA_PARAM_SENDER, sender);
             context.startService(otpIntent);
         }
     }
