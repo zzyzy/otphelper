@@ -1,14 +1,10 @@
 package com.paperfly.otphelper;
 
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_RECEIVE_SMS = 1;
@@ -44,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 // result of the request.
             }
         }
-
-        if (!SmsReceiverService.IsRunning())
-            startService(new Intent(this, SmsReceiverService.class));
     }
 
     @Override

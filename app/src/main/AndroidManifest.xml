@@ -29,9 +29,8 @@
         </receiver>
 
         <service
-            android:name=".SmsReceiverService"
-            android:enabled="true"
-            android:exported="true">
+            android:name=".OtpIntentService"
+            android:exported="false">
         </service>
     </application>
 

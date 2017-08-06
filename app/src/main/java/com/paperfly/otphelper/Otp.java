@@ -18,6 +18,11 @@ public class Otp {
         this.date = date;
     }
 
+    public Otp(Otp otp) {
+        this.text = otp.getText();
+        this.date = otp.getDate();
+    }
+
     public String getText() {
         return text;
     }
